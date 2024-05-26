@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirage - Personal Page</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            border: 5px solid #000;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 10px;
+        }
+        h2 {
+            font-size: 1.2em;
+            color: #999;
+            margin-top: 1px; /* Уменьшен верхний отступ */
+        }
+        .button {
+            display: block;
+            width: 200px;
+            margin: 10px auto; /* Уменьшено расстояние между кнопками */
+            padding: 10px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2em;
+            transition: background-color 0.3s, color 0.3s, width 0.3s; /* Добавлен переход ширины */
+        }
+        .button:hover {
+            background-color: #8181FF;
+            color: #fff;
+            width: 220px; /* Кнопка становится шире при наведении */
+        }
+    </style>
+</head>
+<body>
+    <!-- Замените путь 'path/to/your/avatar.png' на реальный путь к вашему изображению аватара -->
+    <img src="E:\webDev\511.png" alt="Profile Picture" class="profile-pic" width="150">
+    <h1>Mirage</h1>
+    <h2>Editor, Game Developer, C++ Dev.</h2>
+    <a href="#" class="button" id="discord-button">Discord</a>
+    <a href="https://steamcommunity.com/profiles/76561199364135375/" class="button">Steam</a>
+    <a href="https://github.com/hard1eUwU" class="button">Git Hub</a>
+    <a href="https://www.artstation.com/hard1e3" class="button">Artstation</a>
+
+    <script>
+        document.getElementById('discord-button').addEventListener('click', function() {
+            navigator.clipboard.writeText('levmirage').then(function() {
+                const button = document.getElementById('discord-button');
+                const originalText = button.innerText;
+                button.innerText = 'Copied!';
+                setTimeout(function() {
+                    button.innerText = originalText;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
+
